@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="486.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qrcode.MainWindowController">
+    <children>
+        <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="179.0" text="Write your content here :" />
+                        <TextArea fx:id="contentText" layoutX="19.0" layoutY="41.0" prefHeight="76.0" prefWidth="475.0" wrapText="true" />
+                        <Label layoutX="19.0" layoutY="139.0" prefHeight="18.0" prefWidth="169.0" text="Choose Background Color" />
+                        <Label layoutX="20.0" layoutY="179.0" prefHeight="18.0" prefWidth="168.0" text="Choose Foreground Color" />
+                        <ColorPicker fx:id="bgColor" layoutX="187.0" layoutY="135.0">
+                            <value>
+                                <Color />
+                            </value>
+                        </ColorPicker>
+                        <ColorPicker fx:id="fgColor" layoutX="187.0" layoutY="175.0" />
+                        <Label layoutX="20.0" layoutY="222.0" text="Set a Logo in the center of QR Code ..." />
+                        <Button fx:id="uploadBtn" layoutX="228.0" layoutY="217.0" mnemonicParsing="false" onAction="#uploadLogo" prefHeight="26.0" prefWidth="86.0" text="Upload" />
+                        <CheckBox fx:id="saveLogoCheckbox" layoutX="321.0" layoutY="208.0" mnemonicParsing="false" selected="true" text="Save it as default" textAlignment="CENTER" />
+                  <AnchorPane layoutX="446.0" layoutY="198.0" prefHeight="65.0" prefWidth="65.0">
+                     <children>
+                              <ImageView fx:id="logoImg" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.5999999999999943" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.5999999999999943" AnchorPane.topAnchor="0.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="65.0" stroke="BLACK" strokeType="INSIDE" width="65.0" AnchorPane.bottomAnchor="0.5999999999999943" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.5999999999999943" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="294.0" layoutY="270.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                              <ImageView fx:id="qrImg" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                        <Label layoutX="20.0" layoutY="270.0" text="Set width and height :" />
+                        <Slider fx:id="sizeSlider" blockIncrement="50.0" layoutX="20.0" layoutY="302.0" majorTickUnit="100.0" max="2000.0" min="100.0" minorTickCount="100" prefHeight="14.0" prefWidth="242.0" showTickLabels="true" snapToTicks="true" value="300.0" />
+                        <Label fx:id="sizeLbl" layoutX="175.0" layoutY="270.0" text="300 * 300" />
+                        <Button fx:id="createBtn" layoutX="60.0" layoutY="357.0" mnemonicParsing="false" onAction="#createQRCode" prefHeight="26.0" prefWidth="150.0" text="CREATE" />
+                        <Button fx:id="saveBtn" layoutX="60.0" layoutY="406.0" mnemonicParsing="false" onAction="#saveQRCode" prefHeight="26.0" prefWidth="150.0" text="SAVE" />
+                  <Button layoutX="350.0" layoutY="230.0" mnemonicParsing="false" onAction="#deleteLogo" prefHeight="26.0" prefWidth="54.0" text="Delete" />
+                    </children>
+                </AnchorPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
